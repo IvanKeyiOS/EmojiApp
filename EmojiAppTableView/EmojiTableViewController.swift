@@ -9,7 +9,6 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    
     var objects = [
         Emoji(emoji: "🥰", name: "Love", description: "Let's love each other", isFavourite: false),
         Emoji(emoji: "🏀", name: "Basketball", description: "The best game in the world", isFavourite: false),
@@ -22,6 +21,7 @@ class EmojiTableViewController: UITableViewController {
         self.title = "Emoji App"
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+    
     @IBAction func addNewEmoji(_ sender: Any) {
         let storyboardVC = UIStoryboard(name: "NewEmojiTableView", bundle: nil).instantiateViewController(withIdentifier: "NewEmojiTableView") as! NewEmojiTableViewController
         let myNavigationController = UINavigationController(rootViewController: storyboardVC)
@@ -32,12 +32,10 @@ class EmojiTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return objects.count
     }
     
